@@ -1,0 +1,260 @@
+<div class="p-4">
+   {% for detalle in detalles %}
+      <table class="tabla-componente w-full tabla-posicion-valores">
+         <thead>
+            <tr class="encabezado-tabla-componente">
+               <th class="p-3">Detalle de la posición de valores</span></th>
+               <th>{{ detalle.mes }} de {{ detalle.anio }}</th>
+            </tr>
+         </thead>
+         <tbody>
+            <!-- Mercado de Dinero en directo -->
+            <tr class="fw-medium">
+               <td colspan="9" class="pt-2">Mercado de Dinero en directo</td>
+            </tr>
+
+            <tr class="fw-medium">
+               <td>Emisora</td>
+               <td>Serie</td>
+               <td>Titulos</td>
+               <td>Costo</td>
+               <td></td>
+               <td>Precio de Mercado</td>
+               <td>Importe de compra</td>
+               <td>Valor de Mercado</td>
+               <td>Plus/minusvalia</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>% cartera total</td>
+            </tr>
+
+            {% if detalle.mercado_directo_1 %}
+               {% set datos_detalle = detalle.mercado_directo_1 %}
+               <tr>
+                  <td>{{ datos_detalle.emisora }}</td>
+                  <td>{{ datos_detalle.serie }}</td>
+                  <td>{{ datos_detalle.titulos }}</td>
+                  <td>${{ datos_detalle.costo }}</td>
+                  <td></td>
+                  <td>${{ datos_detalle.precio_mercado }}</td>
+                  <td>${{ datos_detalle.importe_compra }}</td>
+                  <td>${{ datos_detalle.valor_mercado }}</td>
+                  <td>${{ datos_detalle.plus_minusvalia }}</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>{{ datos_detalle.cartera_total }}%</td>
+               </tr>
+            {% endif %}
+
+            {% set datos_detalle = detalle.mercado_directo_2 %}
+            <tr>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">{{ datos_detalle.titulos }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">${{ datos_detalle.importe_compra }}</td>
+               <td class="borde-arriba borde-abajo">${{ datos_detalle.valor_mercado }}</td>
+               <td class="borde-arriba borde-abajo">${{ datos_detalle.plus_minusvalia }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">{{ datos_detalle.cartera_total }}%</td>
+            </tr>
+
+            <!-- Mercado de dinero en reporto -->
+            <tr class="fw-medium">
+               <td colspan="9" class="pt-2 pb-2">Mercado de dinero en reporto</td>
+            </tr>
+
+            <tr class="fw-medium">
+               <td>Emisora</td>
+               <td>Serie</td>
+               <td>Titulos</td>
+               <td>F. Inicio</td>
+               <td>F. Venc</td>
+               <td>Precio de Mercado</td>
+               <td>Importe de Operación</td>
+               <td>Valor al cierre</td>
+               <td>Premio desvengado</td>
+               <td>Plazo</td>
+               <td>Días por Vencer</td>
+               <td>Tasa</td>
+               <td>% cartera total</td>
+            </tr>
+
+            {% if detalle.mercado_reporto_1 %}
+               {% set datos_detalle = detalle.mercado_reporto_1 %}
+               <tr>
+                  <td>{{ datos_detalle.emisora }}</td>
+                  <td>{{ datos_detalle.serie }}</td>
+                  <td>{{ datos_detalle.titulos }}</td>
+                  <td>{{ datos_detalle.fecha_inicio }}</td>
+                  <td>{{ datos_detalle.fecha_vencimiento }}</td>
+                  <td>${{ datos_detalle.precio_mercado }}</td>
+                  <td>${{ datos_detalle.importe_operacion }}</td>
+                  <td>${{ datos_detalle.valor_cierre }}</td>
+                  <td>${{ datos_detalle.premio_desvengado }}</td>
+                  <td>{{ datos_detalle.plazo }}</td>
+                  <td>{{ datos_detalle.dias_por_vencer }}</td>
+                  <td>{{ datos_detalle.tasa }}</td>
+                  <td>{{ datos_detalle.cartera_total }}%</td>
+               </tr>
+            {% endif %}
+
+            {% set datos_detalle = detalle.mercado_reporto_2 %}
+            <tr>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">{{ datos_detalle.titulos }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">${{ datos_detalle.importe_operacion }}</td>
+               <td class="borde-arriba borde-abajo">${{ datos_detalle.valor_cierre }}</td>
+               <td class="borde-arriba borde-abajo">${{ datos_detalle.premio_desvengado }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">{{ datos_detalle.cartera_total }}%</td>
+            </tr>
+
+            <!-- Mercado de capitales -->
+            <tr class="fw-medium">
+               <td colspan="9" class="pt-2 pb-2">Mercado de capitales</td>
+            </tr>
+
+            <tr class="fw-medium">
+               <td>Emisora</td>
+               <td>Serie</td>
+               <td>Titulos Mes Actual</td>
+               <td>Costo Promedio Ponderado</td>
+               <td></td>
+               <td>Precio de Mercado</td>
+               <td>Importe de compra</td>
+               <td>Valor de Mercado</td>
+               <td>Plus/minusvalia</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>% cartera total</td>
+            </tr>
+
+            {% if detalle.mercado_capitales_1 %}
+               {% set datos_detalle = detalle.mercado_capitales_1 %}
+               <tr>
+                  <td>{{ datos_detalle.emisora }}</td>
+                  <td>{{ datos_detalle.serie }}</td>
+                  <td>{{ datos_detalle.titulos_mes_actual }}</td>
+                  <td>{{ datos_detalle.costo_promedio }}</td>
+                  <td></td>
+                  <td>${{ datos_detalle.precio_mercado }}</td>
+                  <td>${{ datos_detalle.importe_compra }}</td>
+                  <td>${{ datos_detalle.valor_mercado }}</td>
+                  <td>${{ datos_detalle.plus_minusvalia }}</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>{{ datos_detalle.cartera_total }}%</td>
+               </tr>
+            {% endif %}
+
+            {% set datos_detalle = detalle.mercado_capitales_2 %}
+            <tr>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">{{ datos_detalle.titulos_mes_actual }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">${{ datos_detalle.importe_compra }}</td>
+               <td class="borde-arriba borde-abajo">${{ datos_detalle.valor_mercado }}</td>
+               <td class="borde-arriba borde-abajo">${{ datos_detalle.plus_minusvalia }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">{{ datos_detalle.cartera_total }}%</td>
+            </tr>
+
+            <!-- Saldo en Efectivo -->
+            <tr class="fw-medium">
+               <td colspan="9" class="pt-2 pb-2">Saldo en Efectivo</td>
+            </tr>
+
+            <tr class="fw-medium">
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>Valor de Cierre</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>% cartera total</td>
+            </tr>
+
+            {% set datos_detalle = detalle.saldo_efectivo %}
+            <tr>
+               <td>{{ datos_detalle.moneda }}</td>
+               <td></td>
+               <td>{{ datos_detalle.cantidad }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>${{ datos_detalle.valor_cierre }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>{{ datos_detalle.cartera_total }}%</td>
+            </tr>
+
+            <tr>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">{{ datos_detalle.cantidad }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">${{ datos_detalle.valor_cierre }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="borde-arriba borde-abajo">{{ datos_detalle.cartera_total }}%</td>
+            </tr>
+
+            <!-- Total -->
+            <tr><td class="pt-2 pb-2"></td></tr>
+            <tr><td class="pt-2 pb-2"></td></tr>
+            <tr>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="texto-izquierda">Total</td>
+               <td class="borde-arriba borde-abajo">${{ detalle.total }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr><td class="pt-2 pb-2"></td></tr>
+            <tr><td class="pt-2 pb-2"></td></tr>
+         </tbody>
+      </table>
+      <div class="salto-pagina"></div>
+   {% endfor %}
+</div>

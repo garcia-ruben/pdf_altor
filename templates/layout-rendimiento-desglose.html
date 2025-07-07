@@ -1,0 +1,115 @@
+<div class="salto-pagina"></div>
+<div class="pr-8">
+   <table class="tabla-componente w-full">
+      <thead>
+         <tr class="encabezado-tabla-componente">
+            <th>Rendimiento de la cartera de inversión *</th>
+            <th>{{ mes_rendimiento }} de {{ anio_rendimiento }}</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr class="fs-9 tabla-rendimientos-titulo">
+            <td>Mes</td>
+            <td>Valor de la Cartera al final del periodo</td>
+            <td>Rendimiento Periodo</td>
+            <td>%</td>
+            <td>Rendimiento neto del periodo</td>
+            <td>%</td>
+            <td></td>
+         </tr>
+         {% for dato in datos %}
+            <tr class="w-full tabla-rendimientos-valores">
+               <td>{{ dato.Mes }}</td>
+               <td>{{ dato.valor_cartera }}</td>
+               <td>{{ dato.rendimiento_periodo}}</td>
+               <td>{{ dato.porcentaje_bruto }}</td>
+               <td>{{ dato.rendimiento_neto }}</td>
+               <td>{{ dato.porcentaje_neto }}</td>
+               <td></td>
+            </tr>
+         {% else %}
+            <tr>
+               <td colspan="11">No hay movimientos en este periodo.</td>
+            </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+   <p class="m-2 texto-justificado">
+      [ * Calculado de acuerdo con lo establecido por las "Disposiciones de carácter general aplicables a las Entidades Financieras y demás
+      personas que proporcione servicios de inversión" emitidas por la comision Nacional Bancaria y de Valores. Se incluye el Rendimiento Neto
+      de la Cartera de inversion de los 11 meses previos al periodo. ]
+   </p>
+   <div style="padding: 0 20mm">
+      <table class="tabla-componente w-full">
+         <thead>
+            <tr class="encabezado-tabla-componente">
+               <th>Desglose de las comisiones y gastos</th>
+               <th>{{ mes_rendimiento }} de {{ anio_rendimiento }}</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr class="fs-9 tabla-comisiones-titulo">
+               <td>Comisiones con IVA</td>
+               <td>% sobre cartera</td>
+            </tr>
+            {% for dato in datos %}
+               <tr class="w-full tabla-rendimientos-valores">
+                  <td>{{ dato.comisiones }}</td>
+                  <td>{{ dato.porcentaje }}</td>
+               </tr>
+            {% else %}
+               <tr class="fs-9 tabla-rendimientos-titulo">
+                  <td>Comisiones con IVA</td>
+                  <td>% sobre cartera</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      <p class="m-2 texto-justificado">
+         Favor de contactar a su ejecutivo de cuenta, si requiere mayor información con relación a las comisiones y gastos de intermediación,
+         administrativos y por servicios cobrados, asi como el Impuesto sobre la Renta retenido, la forma de cálculo y el monto de éstos como
+         proporción del valor total de la cartera de inversión.
+      </p>
+   </div>
+   <table class="tabla-principal">
+      <thead>
+         <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco fs-12">
+            ISR retenido por venta de acciones:
+         </th>
+      </thead>
+      <tbody>
+         <tr class="fw-medium texto-centrado">
+            <td></td>
+            <td></td>
+            <td colspan="2">ISR Retenido</td>
+            <td rowspan="2">Precio venta fiscal</td>
+            <td>Costo fiscal</td>
+            <td>Fecha de</td>
+            <td colspan="2">Ganancia Fiscal</td>
+            <td colspan="2">Perdida Fiscal</td>
+         </tr>
+         <tr class="fw-medium texto-centrado">
+            <td>Emisora</td>
+            <td>Serie</td>
+            <td>Del periodo</td>
+            <td>Acumulado</td>
+            <td>Promedio</td>
+            <td>Actualizacion</td>
+            <td>Del periodo</td>
+            <td>Acumulado</td>
+            <td>Del periodo</td>
+            <td>Acumulado</td>
+         </tr>
+      </tbody>
+   </table>
+   <div class="m-2">
+      <p class="texto-justificado">
+         Este documento no es una constancia de retenciones. Favor de contactar a su ejecutivo de cuenta, si requiere mayor información con relación a las comisiones y
+         gastos de intermediación, administrativos y por servicios cobrados, así como el Impuesto sobre la Renta retenido, la forma de cálculo y el monto de éstos como
+         proporción del valor total de la cartera de inversión.
+      </p>
+      <p class="texto-justificado">
+         La ganancia o pérdida fiscal presentada en esta sección se calcula conforme al artículo 20 de la Ley del Impuesto Sobre la Renta.
+      </p>
+   </div>
+</div>

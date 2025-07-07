@@ -1,0 +1,73 @@
+<div class="p-4">
+   <table class="tabla-componente w-full">
+      <thead>
+         <tr class="encabezado-tabla-componente">
+            <th>Movimientos del mes</span></th>
+            <th>diciembre de 2024</th>
+         </tr>
+      </thead>
+
+      <tbody>
+         <tr class="fs-9 tabla-movimiento-titulo">
+            <td>Fecha operación</td>
+            <td>Fecha liquidación</td>
+            <td>Tipo movimiento</td>
+            <td>Descripción</td>
+            <td>Titulos</td>
+            <td>Plazo</td>
+            <td>Precio</td>
+            <td>Tasa</td>
+            <td>Importe operación</td>
+            <td>Cargo/Abono</td>
+            <td>Saldo</td>
+         </tr>
+         {% for movimiento in movimientos %}
+            {% if loop.index0 != 0 and loop.index0 is divisibleby 16 %}
+                  </tbody>
+               </table>
+               <div class="salto-pagina"></div>
+
+               <table class="tabla-componente w-full">
+                  <thead>
+                     <tr class="encabezado-tabla-componente">
+                        <th>Movimientos del mes</span></th>
+                        <th>diciembre de 2024</th>
+                     </tr>
+                  </thead>
+
+                  <tbody>
+                     <tr class="fs-9 tabla-movimiento-titulo">
+                        <td>Fecha operación</td>
+                        <td>Fecha liquidación</td>
+                        <td>Tipo movimiento</td>
+                        <td>Descripción</td>
+                        <td>Titulos</td>
+                        <td>Plazo</td>
+                        <td>Precio</td>
+                        <td>Tasa</td>
+                        <td>Importe operación</td>
+                        <td>Cargo/Abono</td>
+                        <td>Saldo</td>
+                     </tr>
+            {% endif %}
+               <tr class="tabla-movimiento-valores">
+               <td>{{ movimiento.fecha_operacion }}</td>
+               <td>{{ movimiento.fecha_liquidacion }}</td>
+               <td>{{ movimiento.tipo_movimiento }}</td>
+               <td>{{ movimiento.descripcion }}</td>
+               <td>{{ movimiento.titulos }}</td>
+               <td>{{ movimiento.plazo }}</td>
+               <td>{{ movimiento.precio }}</td>
+               <td>{{ movimiento.tasa }}</td>
+               <td>{{ movimiento.importe_operacion }}</td>
+               <td>{{ movimiento.cargo_abono }}</td>
+               <td>{{ movimiento.saldo }}</td>
+            </tr>
+         {% else %}
+            <tr>
+               <td colspan="11">No hay movimientos en este periodo.</td>
+            </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+<div>

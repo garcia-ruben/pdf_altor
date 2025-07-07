@@ -1,0 +1,177 @@
+<div class="encabezado-info">
+   <div class="encabezado-textos">
+      <div>RFC del cliente:</div>
+      <div>Calle, Núm Ext, Núm Int: </div>
+      <div>Colonia:</div>
+      <div>Delegación / Municipio:</div>
+      <div>Código Postal:</div>
+      <div>Regimen Fiscal Receptor:</div>
+   </div>
+   <div class="w-100">
+      <div>{{ rfc_cliente }}</div>
+      <div>{{ direccion }}</div>
+      <div>{{ colonia }}</div>
+      <div>{{ municipio }}</div>
+      <div>{{ codigo_postal }}</div>
+      <div>{{ clave_regimen_fiscal}}</div>
+   </div>
+   <div class="encabezado-textos">
+      <div>Ejecutivo de Cuenta:</div>
+      <div>Periodo del:</div>
+      <div>Fecha de Corte::</div>
+      <div>Dias del Periodo::</div>
+      <div>Tipo de envio:</div>
+   </div>
+   <div class="encabezado-valores">
+      <div>{{ ejecutivo }}</div>
+      <div>{{ periodo }}</div>
+      <div>{{ fecha_corte }}</div>
+      <div>{{ dias_periodo }}</div>
+      <div>{{ tipo_envio }}</div>
+   </div>
+</div>
+
+<div class="flex-row">
+   <div class="contenedor-tablas-resumen">
+      <div class="flex-column gap-2">
+         <table class="tabla-principal tabla-cartera-inversion padding tr-encabezado">
+            <thead>
+               <tr>
+                  <th class="encabezado-tabla-principal texto-izquierda p-3" colspan="6">
+                     <span class="texto-blanco fs-12">
+                        Resumen Cartera de Inversión
+                     </span>
+                     <span class="texto-blanco fs-9 fw-light fs-italic ml-6">
+                        (cifras en pesos mexicanos)
+                     </span>
+                  </th>
+               </tr>
+            </thead>
+   
+            <tbody>
+               <tr class="texto-derecha fs-9">
+                  <td></td>
+                  <td>Valuación Anterior:</td>
+                  <td>% Total:</td>
+                  <td>Valuación Actual:</td>
+                  <td>% Total:</td>
+                  <td>Variación %:</td>
+               </tr>
+   
+               {% for dato in resumen_cartera_inversion %}
+                  <tr>
+                     <td>{{ dato.nombre }}</td>
+                     <td>${{ dato.anterior }}</td>
+                     <td>{{ dato.total_anterior }}%</td>
+                     <td>${{ dato.actual }}</td>
+                     <td>{{ dato.total_actual }}%</td>
+                     <td>{{ dato.variacion }}%</td>
+                  </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+   
+         <div class="flex-row gap-2 w-full">
+            <div class="flex-column w-mid gap-2">
+               <!-- TABLA OPERACIONES -->
+               <table class="tabla-principal padding-2 tr-encabezado">
+                  <thead>
+                     <tr>
+                        <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco fs-12">
+                           Operaciones pendientesde liquidar
+                        </th>
+                     </tr>
+                  </thead>
+   
+                  <tbody>
+                     <tr>
+                        <td></td>
+                        <td>Compras</td>
+                        <td>Ventas</td>
+                     </tr>
+   
+                     {% for operacion in operaciones_pendientes %}
+                        <tr>
+                           <td>{{ operacion.nombre }}</td>
+                           <td>${{ operacion.compras }}</td>
+                           <td>${{ operacion.ventas }}</td>
+                        </tr>
+                     {% endfor %}
+                  </tbody>
+               </table>
+   
+               <!-- TABLA RENDIMIENTO -->
+               <table class="tabla-principal padding-2">
+                  <thead>
+                     <tr>
+                        <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco fs-12">
+                           Rendimiento
+                        </th>
+                     </tr>
+                  </thead>
+   
+                  <tbody>
+                     {% for rendimiento in rendimientos %}
+                        <tr>
+                           <td>{{ rendimiento.nombre }}</td>
+                           <td>{{ rendimiento.cantidad }}</td>
+                           <td>{{ rendimiento.porcentaje }}%</td>
+                        </tr>
+                     {% endfor %}
+                  </tbody>
+               </table>
+            </div>
+   
+            <!-- TABLA RESUMEN DE MOVIMIENTOS -->
+            <table class="tabla-principal w-mid">
+               <thead>
+                  <tr>
+                     <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco fs-12">
+                        Resumen de movimientos y comisiones
+                     </th>
+                  </tr>
+               </thead>
+   
+               <tbody>
+                  {% for movimiento in resumen_movimientos %}
+                     <tr>
+                        <td>{{ movimiento.nombre }}</td>
+                        <td class="texto-derecha">${{ movimiento.cantidad }}</td>
+                     </tr>
+                  {% endfor %}
+               </tbody>
+            </table>
+         </div>
+   
+         <!-- TABLA TOTAL ISR -->
+         <table class="tabla-principal contenedor-tabla-isr">
+            <thead>
+               <tr>
+                  <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco fs-12 bordes-secundarios">
+                     Total ISR Retenido del periodo
+                  </th>
+                  <td class="texto-izquierda fs-8 bordes-secundarios-celda">${{ total_isr }}</td>
+               </tr>
+            </thead>
+         </table>
+   
+         <p class="texto-justificado fw-regular w-full">
+            Este documento no es una constancia de retenciones. Favor de contactar a su ejecutivo de cuenta, si requiere mayor información con
+            relación a las comisiones y gastos de intermediación, administrativos y por servicios cobrados, asi como el Impuesto sobre la Renta
+            retenido, la forma de cálculo y el monto de éstos como proporción del valor total de la cartera de inversión.
+         </p>
+      </div>
+   </div>
+   
+   <div class="contenedor-graficas-resumen">
+      <div class="flex-column">
+         <div class="contenedor-svg mt-2">
+            {{ grafica_pastel }}
+         </div>
+
+         <div class="contenedor-svg mt-2">
+            {{ grafica_linea }}
+         </div>
+      </div>
+   </div>
+</div>

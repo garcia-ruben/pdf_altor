@@ -1,0 +1,20 @@
+<div class="pr-8">
+   <table class="tabla-principal w-full">
+      <thead>
+         <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco fs-12">
+            Significado de abreviaturas utilizadas en el estado de cuenta:
+         </th>
+      </thead>
+
+      <tbody class="abreviaturas">
+         {% for i in range(0, datos|length, 3) %}
+            <tr>
+               {% for dato in datos[i:i+3] %}
+               <td>{{ dato[0] }}</td>
+               <td>{{ dato[1] }}</td>
+               {% endfor %}
+            </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+<div>

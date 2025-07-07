@@ -1,0 +1,134 @@
+<div class="pr-8">
+   <!-- Diferencial valuacion 1 -->
+   <table class="tabla-componente w-full tabla-valuacion-1">
+      <thead>
+         <tr class="encabezado-tabla-componente">
+            <th class="p-3">Diferencial por valuación de la cartera al cierre del periodo. (1)</span></th>
+            <th>{{ mes }} de {{ anio }}</th>
+         </tr>
+      </thead>
+
+      <tbody>
+         <!-- Mercado de Dinero en directo -->
+         <tr class="fw-medium">
+            <td>Tipo posicion</td>
+            <td>Emisora</td>
+            <td>Serie</td>
+            <td>Titulos</td>
+            <td>Costo</td>
+            <td>Precio de Mercado ciere anterior</td>
+            <td>Precio de Mercado mes actual</td>
+            <td>Diferencial por valuación</td>
+            <td>% diferencial</td>
+         </tr>
+
+         <tr class="fw-medium">
+            <td colspan="9">Mercado de Dinero en directo</td>
+         </tr>
+
+         {% if detalle.mercado_directo_1 %}
+            {% set datos_detalle = detalle.mercado_directo_1 %}
+            <tr>
+               <td>{{ datos_detalle.tipo_posicion }}</td>
+               <td>{{ datos_detalle.emisora }}</td>
+               <td>{{ datos_detalle.serie }}</td>
+               <td>{{ datos_detalle.titulos }}</td>
+               <td>${{ datos_detalle.costo }}</td>
+               <td>${{ datos_detalle.precio_anterior }}</td>
+               <td>${{ datos_detalle.precio_actual }}</td>
+               <td>${{ datos_detalle.diferencial_valuacion }}</td>
+               <td>{{ datos_detalle.porcentaje }}%</td>
+            </tr>
+         {% endif %}
+
+         {% set datos_detalle = detalle.mercado_directo_2 %}
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="borde-arriba borde-abajo">{{ datos_detalle.titulos }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="borde-arriba borde-abajo">{{ datos_detalle.diferencial_valuacion }}</td>
+            <td></td>
+         </tr>
+
+         <!-- Mercado de Dinero en reporto -->
+         <tr class="fw-medium">
+            <td colspan="9">Mercado de Dinero en reporto</td>
+         </tr>
+
+         {% if detalle.mercado_reporto_1 %}
+            {% set datos_detalle = detalle.mercado_reporto_1 %}
+            <tr>
+               <td>{{ datos_detalle.tipo_posicion }}</td>
+               <td>{{ datos_detalle.emisora }}</td>
+               <td>{{ datos_detalle.serie }}</td>
+               <td>{{ datos_detalle.titulos }}</td>
+               <td>${{ datos_detalle.costo }}</td>
+               <td>${{ datos_detalle.precio_anterior }}</td>
+               <td>${{ datos_detalle.precio_actual }}</td>
+               <td>${{ datos_detalle.diferencial_valuacion }}</td>
+               <td>{{ datos_detalle.porcentaje }}%</td>
+            </tr>
+         {% endif %}
+
+         {% set datos_detalle = detalle.mercado_reporto_2 %}
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="borde-arriba borde-abajo">{{ datos_detalle.titulos }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="borde-arriba borde-abajo">{{ datos_detalle.diferencial_valuacion }}</td>
+            <td></td>
+         </tr>
+
+         <!-- Mercado de Capitales -->
+         <tr class="fw-medium">
+            <td colspan="9">Mercado de Capitales</td>
+         </tr>
+
+         {% if detalle.mercado_capitales_1 %}
+            {% set datos_detalle = detalle.mercado_capitales_1 %}
+            <tr>
+               <td>{{ datos_detalle.tipo_posicion }}</td>
+               <td>{{ datos_detalle.emisora }}</td>
+               <td>{{ datos_detalle.serie }}</td>
+               <td>{{ datos_detalle.titulos }}</td>
+               <td>${{ datos_detalle.costo }}</td>
+               <td>${{ datos_detalle.precio_anterior }}</td>
+               <td>${{ datos_detalle.precio_actual }}</td>
+               <td>${{ datos_detalle.diferencial_valuacion }}</td>
+               <td>{{ datos_detalle.porcentaje }}%</td>
+            </tr>
+         {% endif %}
+
+         {% set datos_detalle = detalle.mercado_capitales_2 %}
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="borde-arriba borde-abajo">{{ datos_detalle.titulos }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="borde-arriba borde-abajo">{{ datos_detalle.diferencial_valuacion }}</td>
+            <td></td>
+         </tr>
+
+         <tr>
+            <td class="pt-2 pb-2"></td>
+         </tr>
+      </tbody>
+   </table>
+
+   <p class="texto-justificado fw-regular w-full">
+      Nota: [ (1) el diferencial por valuación de títulos en posición al cierre del periodo será la diferencia entre el precio de cierre del mes
+      actual y el costo promedio cuando provenga de compras o traspasos de valores durante el periodo. Si no existen operaciones de compra o traspaso,
+      el diferencial por valuación sera la diferencia entre el precio de cierre del mes actual y el precio de cierre del mes anterior (Anexo 14 Va) ]
+   </p>
+</div>

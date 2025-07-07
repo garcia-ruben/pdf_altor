@@ -1,0 +1,21 @@
+
+<div class="pr-8">
+   <table class="tabla-principal sin-bordes w-full">
+      <thead>
+         <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco fs-12">
+            Avisos
+         </th>
+      </thead>
+      <tbody>
+         <tr class="fs-9 tabla-movimiento-titulo fondo-alterno">
+            <td class="tetxo-justificado">
+               {% for aviso in avisos %}
+                  <span>{{ aviso }}</span>
+                  <br>
+               {% endfor %}
+            </td>
+         </tr>
+      </tbody>
+   </table>
+<div>
+<div class="salto-pagina"></div>

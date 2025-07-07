@@ -1,0 +1,210 @@
+<div class="salto-pagina"></div>
+<div class="pr-8">
+   <!-- Diferencial valuacion 1 -->
+   <table class="tabla-principal w-full sin-bordes">
+      <thead>
+         <tr>
+            <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco fs-12">
+               Operaciones pendientes de liquidar
+            </th>
+         </tr>
+      </thead>
+   </table>
+   <hr>
+   
+   <!-- CONCEPTOS DEL CFDI -->
+   <table class="tabla-principal w-full sin-bordes fs-9 tr-encabezado tabla-conceptos-cfdi">
+      <thead>
+         <tr>
+            <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco">
+               Conceptos del CFDI:
+            </th>
+         </tr>
+      </thead>
+
+      <tbody>
+         <tr>
+            <td>Cantidad</td>
+            <td>Clave Unidad</td>
+            <td>Clave Producto o Servicio</td>
+            <td>Descripcion</td>
+            <td>Valor unitario</td>
+            <td>Total importe</td>
+            <td>Tasa IVA</td>
+         </tr>
+
+         <tr class="fs-8">
+            <td>{{ cantidad }}</td>
+            <td>{{ clave_unidad }}</td>
+            <td>{{ clave_producto }}</td>
+            <td>{{ descripcion }}</td>
+            <td>{{ valor_unitario }}</td>
+            <td>{{ total_importe }}</td>
+            <td>{{ tasa_iva }}</td>
+         </tr>
+         
+         <!-- Resumen -->
+         <tr class="fondo-alterno">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Subtotal:</td>
+            <td></td>
+            <td>{{ subtotal }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>IVA (Tasa {{ tasa_iva }} ):</td>
+            <td></td>
+            <td>{{ iva }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Importe Total:</td>
+            <td></td>
+            <td>{{ importe_total }}</td>
+         </tr>
+      </tbody>
+   </table>
+
+   <!-- SELLO DIGITAL CFDI -->
+   <hr>
+   <table class="tabla-principal w-full sin-bordes fs-9 tabla-conceptos-cfdi">
+      <thead>
+         <tr>
+            <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco">
+               Sello Digital del CFDI:
+            </th>
+         </tr>
+      </thead>
+
+      <tbody>
+         <tr class="fondo-alterno">
+            <td class="celda-responsiva">
+               <p class="texto-justificado fs-8 m-0">
+                  {{ sello_cfdi }}
+               </p>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+
+   <!-- SELLO DIGITAL SAT -->
+   <hr>
+   <table class="tabla-principal w-full sin-bordes fs-9 tabla-conceptos-cfdi">
+      <thead>
+         <tr>
+            <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco">
+               Sello Digital del SAT:
+            </th>
+         </tr>
+      </thead>
+
+      <tbody>
+         <tr class="fondo-alterno">
+            <td class="celda-responsiva">
+               <p class="texto-justificado fs-8 m-0">
+                  {{ sello_sat }}
+               </p>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+
+   <!-- CADENA ORIGINAL -->
+   <hr>
+   <table class="tabla-principal w-full sin-bordes fs-9 tabla-conceptos-cfdi">
+      <thead>
+         <tr>
+            <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco">
+               Cadena Original del Complemento de Certificación Digital del SAT:
+            </th>
+         </tr>
+      </thead>
+
+      <tbody>
+         <tr class="fondo-alterno">
+            <td colspan="3" class="celda-responsiva">
+               <p class="texto-justificado fs-8 m-0">
+                  {{ cadena_original }}
+               </p>
+            </td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td>Emisor</td>
+            <td>{{ razon_social_emisor }}</td>
+            <td rowspan="11" class="texto-centrado">
+               <img class="w-mid h-mid" src="static/images/qr.svg" alt="QR"/>
+            </td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td>RFC:</td>
+            <td>{{ rfc_emisor }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td>Régimen:</td>
+            <td>{{ regimen_emisor }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td>Lugar de Expedición:</td>
+            <td>{{ lugar_expedicion }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td>Fecha de Expedición:</td>
+            <td>{{ fecha_expedicion }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td>Método de Pago:</td>
+            <td>{{ metodo_pago }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td>Forma de Pago:</td>
+            <td>{{ forma_pago }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td>Folio Fiscal:</td>
+            <td>{{ folio_fiscal }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td>Número de serie de certificado del SAT:</td>
+            <td>{{ num_serie_sat }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td>Número de serie de certificado del Emisor:</td>
+            <td>{{ num_serie_emisor }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td>Fecha y Hora de Certificación:</td>
+            <td>{{ fecha_hora_certificacion }}</td>
+         </tr>
+
+         <tr class="fondo-alterno">
+            <td colspan="3" class="celda-responsiva">
+               <p class="texto-centrado fs-8 m-0">
+                  Este documento es una representación impresa de un CFDI
+               </p>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>

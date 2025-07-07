@@ -1,0 +1,500 @@
+@font-face {
+   font-family: "Montserrat";
+   src: url("../fonts/Montserrat-Light.ttf") format("truetype");
+   font-weight: 300;
+}
+
+@font-face {
+   font-family: "Montserrat";
+   src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+   font-weight: 400;
+}
+
+@font-face {
+   font-family: "Montserrat";
+   src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
+   font-weight: 500;
+}
+
+@page {
+   size: 279.4mm 215.9mm;
+   margin: 40mm 0mm 28.5mm 0mm;
+
+   @top-left {
+      content: element(header);
+   }
+
+   @bottom-left {
+      content: element(footer);
+   }
+}
+
+.running-header { position: running(header); }
+.running-footer { position: running(footer); }
+:root {
+   --ancho-pagina: 279.4mm;
+   --color-principal: #165B79;
+   --color-secundario: #2690A3;
+   --color-alterno: #D3E1E5;
+}
+
+html, body {
+   margin: 0;
+   padding: 0;
+   font-family: "Montserrat", sans-serif;
+   font-size: 8pt;
+   font-weight: 300;
+   line-height: 1.26;
+}
+
+.contenido {
+   padding-top: 4mm;
+   padding-bottom: 4mm;
+   width: var(--ancho-pagina);
+}
+
+/* Estilos generales */
+.salto-pagina { break-before: page; }
+.flex { display: flex; }
+.texto-izquierda { text-align: start !important; }
+.texto-derecha { text-align: end; }
+.texto-blanco { color: white; }
+.texto-justificado { text-align: justify; }
+.fw-light { font-weight: 300; }
+.fw-regular { font-weight: 400; }
+.fw-medium { font-weight: 500; }
+.fs-12 { font-size: 12pt; }
+.fs-9 { font-size: 9.3pt; }
+.fs-8 { font-size: 8pt; }
+.fs-italic { font-style: italic; }
+.w-100 { width: 100mm; }
+.gap-2 { gap: 2mm }
+.mt-2 { margin-top: 2mm; }
+.w-full { width: 100%; }
+.w-mid { width: 50%; }
+.h-full { height: 100%; }
+.h-mid { height: 50%; }
+.flex-1 { flex: 1 }
+.w-max {
+   width: var(--ancho-pagina);
+   margin-left: 4mm;
+   margin-right: 4mm;
+}
+.fondo-alterno { background-color: var(--color-alterno); }
+.m-0 { margin: 0 }
+
+.flex-column { display: flex; flex-direction: column; }
+.flex-row { display: flex; flex-direction: row; }
+.p-3 {
+   padding-left: 3mm;
+   padding-right: 3mm;
+}
+.p-4 {
+   padding-left: 4mm;
+   padding-right: 4mm;
+}
+.borde-arriba { border-top: 0.2mm solid black }
+.borde-abajo { border-bottom: 0.2mm solid black }
+
+.pt-2 { padding-top: 2mm; }
+.pb-2 { padding-bottom: 2mm; }
+.pr-8 { padding-right: 8mm; }
+hr { border: none; height: 0; }
+
+/* PERSONALIZADO PARA LAYOUT RESUMEN */
+.contenedor-tablas-resumen {
+   width: 193mm;
+   padding-left: 4mm;
+}
+.ml-6 { margin-left: 6mm; }
+.contenedor-graficas-resumen {
+   width: 82mm;
+   padding: 0 4mm 0 2mm;
+}
+.contenedor-tabla-isr { width: 49.5%; }
+.bordes-secundarios {
+   border-top: 0.2mm solid var(--color-secundario);
+   border-bottom: 0.2mm solid var(--color-secundario);
+}
+.bordes-secundarios-celda {
+   border: 0.2mm solid black;
+   border-left: none;
+}
+
+/* Estilos para tablas */
+.celda-responsiva {
+   word-wrap: break-word;
+   white-space: normal;
+   max-width: 269mm;
+}
+table { width: 100%; border-collapse: collapse; }
+table.tabla-principal thead {
+   display: table;
+   width: 100%;
+   border-left: 0.2mm solid var(--color-secundario);
+   border-right: 0.2mm solid var(--color-secundario);
+}
+table.tabla-principal tbody.abreviaturas tr td:nth-child(odd) {
+   font-weight: 500;
+}
+table tbody {
+   display: table;
+   width: 100%;
+   border-left: 0.2mm solid black;
+   border-right: 0.2mm solid black;
+   border-bottom: 0.2mm solid black;
+   border-top: none;
+   border-collapse: collapse;
+   font-size: 8pt;
+}
+th { font-weight: 400; }
+td { padding-left: 1.2mm; padding-right: 1.2mm; }
+table.sin-bordes tbody, table.sin-bordes thead { border: none; }
+.encabezado-tabla-principal { background-color: var(--color-secundario); font-weight: 500;}
+
+/* Tablas plantilla 1 */
+table.padding td { padding: 1.2mm; }
+table.padding-2 td { padding: 0.75mm; }
+table.tr-encabezado tbody tr:first-child { font-weight: 500; }
+table.tabla-cartera-inversion tbody tr td:nth-child(1) { width: 43.5mm; font-weight: 500; }
+table.tabla-cartera-inversion tbody tr td:nth-child(2) { width: 42mm; text-align: end; }
+table.tabla-cartera-inversion tbody tr td:nth-child(3) { width: 32mm; text-align: end; }
+table.tabla-cartera-inversion tbody tr td:nth-child(4) { width: 37.5mm; text-align: end; }
+table.tabla-cartera-inversion tbody tr td:nth-child(5) { width: 27mm; text-align: end; }
+table.tabla-cartera-inversion tbody tr td:nth-child(6) { width: 26mm; text-align: end; }
+table.tabla-cartera-inversion tbody tr:last-child { height: 6mm; vertical-align: bottom; }
+table.tabla-cartera-inversion tbody tr:last-child td { border-top: 0.2mm solid black ; }
+table.tabla-cartera-inversion tbody tr:last-child td:first-child { border-top: none ; }
+.grafica-lineas {
+   width: 100%;
+   height: 50%;
+   text-align: left;
+}
+
+.grafica-circular {
+   width: 100%;
+   height: 50%;
+   text-align: left;
+}
+
+.contenedor-svg {
+   width: 100%;
+   height: 50%;
+   height: auto;
+}
+
+svg {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+/* Estilos para encabezado */
+.encabezado {
+   display: flex;
+   align-items: center;
+   width: var(--ancho-pagina);
+   padding: 0 4mm;
+}
+.encabezado-titulo {
+   width: 215.15mm;
+   height: 8.5mm;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 500;
+   font-size: 15pt;
+   background-color: var(--color-principal);
+   color: white;
+}
+.encabezado-info {
+   display: flex;
+   align-items: center;
+   width: var(--ancho-pagina);
+   margin-top: 3mm;
+   padding: 0 4mm;
+}
+
+.encabezado-textos { width: 55mm; }
+.encabezado-valores { flex: 1; }
+.logo-div { width: 55mm; }
+.logo { width: 18mm; height: 22mm; }
+
+/* Estilos para footer */
+.footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   width: var(--ancho-pagina);
+   padding: 0 4mm;
+   box-sizing: border-box;
+   font-size: 8pt;
+   line-height: 1.2;
+}
+.paginacion { font-weight: 500; width: var(--ancho-pagina);}
+.numero-pagina::after { content: counter(page); }
+.total-paginas::after { content: counter(pages); }
+
+/* ****************************************************** */
+table.tabla-componente {
+   table-layout: fixed;
+   margin-right: 9.5mm;
+}
+
+table.tabla-componente thead {
+   display: table;
+   width: 100%;
+   border-right: 0.2mm solid #B8BDBC;
+   border-left: 0.2mm solid var(--color-secundario);
+}
+
+table.tabla-componente thead tr.encabezado-tabla-componente th {
+   background-color: var(--color-secundario);
+   font-weight: 500;
+   text-align: start;
+   width: 185mm;
+   color: white !important;
+   font-size: 12pt;
+}
+
+table.tabla-componente thead tr.encabezado-tabla-componente th:last-child {
+   background-color: #B8BDBC;
+   width: 90mm;
+   color: black !important;
+}
+
+table.tabla-componente tbody tr td {
+   color: black !important;
+   width: 10%;
+}
+
+/* fecha operacion */
+table.tabla-componente tbody tr.tabla-movimiento-titulo td:nth-child(1) {
+   width: 20mm;
+   font-weight: 500;
+   text-align: center;
+}
+
+/* Fecha liquidacion */
+table.tabla-componente tbody tr.tabla-movimiento-titulo td:nth-child(2) {
+   width: 22mm;
+   font-weight: 500;
+   text-align: center;
+}
+
+/* Tipo movimiento  */
+table.tabla-componente tbody tr.tabla-movimiento-titulo td:nth-child(3) {
+   width: 24.5mm;
+   font-weight: 500;
+   text-align: center;
+}
+
+/* Descripcion */
+table.tabla-componente tbody tr.tabla-movimiento-titulo td:nth-child(4) {
+   width: 33mm;
+   font-weight: 500;
+   text-align: left;
+}
+
+/* Titulos */
+table.tabla-componente tbody tr.tabla-movimiento-titulo td:nth-child(5) {
+   width: 23.5mm;
+   font-weight: 500;
+   text-align: right;
+   padding: 0 5mm;
+}
+
+/* Plazo */
+table.tabla-componente tbody tr.tabla-movimiento-titulo td:nth-child(6) {
+   width: 18mm;
+   font-weight: 500;
+   text-align: left;
+   padding: 0 5mm;
+}
+
+/* Precio */
+table.tabla-componente tbody tr.tabla-movimiento-titulo td:nth-child(7) {
+   width: 19.5mm;
+   font-weight: 500;
+   text-align: right;
+}
+
+/* Tasa */
+table.tabla-componente tbody tr.tabla-movimiento-titulo td:nth-child(8) {
+   width: 23mm;
+   font-weight: 500;
+   text-align: right;
+}
+
+/* Importe operación */
+table.tabla-componente tbody tr.tabla-movimiento-titulo td:nth-child(9) {
+   width: 36mm;
+   font-weight: 500;
+   text-align: right;
+}
+
+/* Cargo / Abono */
+table.tabla-componente tbody tr.tabla-movimiento-titulo td:nth-child(10) {
+   width: 18.5mm;
+   font-weight: 500;
+   text-align: center;
+}
+
+/* Saldo */
+table.tabla-componente tbody tr.tabla-movimiento-titulo td:nth-child(11) {
+   width: 34.5mm;
+   font-weight: 500;
+   text-align: right;
+}
+
+/* Fecha operacion */
+table.tabla-componente tbody tr.tabla-movimiento-valores td:nth-child(1) {
+   width: 20mm;
+   font-weight: 300;
+   text-align: center;
+}
+
+/* Fecha liquidacion */
+table.tabla-componente tbody tr.tabla-movimiento-valores td:nth-child(2) {
+   width: 22mm;
+   font-weight: 300;
+   text-align: center;
+}
+
+/* Tipo movimiento */
+table.tabla-componente tbody tr.tabla-movimiento-valores td:nth-child(3) {
+   width: 24.5mm;
+   font-weight: 300;
+   text-align: center;
+}
+
+/* Descripción */
+table.tabla-componente tbody tr.tabla-movimiento-valores td:nth-child(4) {
+   width: 33mm;
+   font-weight: 300;
+   text-align: left;
+}
+
+/* Titulos */
+table.tabla-componente tbody tr.tabla-movimiento-valores td:nth-child(5) {
+   width: 23.5mm;
+   font-weight: 300;
+   text-align: right;
+   padding: 0 5mm;
+}
+
+/* Plazo */
+table.tabla-componente tbody tr.tabla-movimiento-valores td:nth-child(6) {
+   width: 18mm;
+   font-weight: 300;
+   text-align: left;
+   padding: 0 5mm;
+}
+
+/* Precio */
+table.tabla-componente tbody tr.tabla-movimiento-valores td:nth-child(7) {
+   width: 19.5mm;
+   font-weight: 300;
+   text-align: right;
+}
+
+/* Tasa */
+table.tabla-componente tbody tr.tabla-movimiento-valores td:nth-child(8) {
+   width: 23mm;
+   font-weight: 300;
+   text-align: left;
+
+}
+
+/* Importe operación */
+table.tabla-componente tbody tr.tabla-movimiento-valores td:nth-child(9) {
+   width: 36mm;
+   font-weight: 300;
+   text-align: right;
+}
+
+/* Cargo/Abono */
+table.tabla-componente tbody tr.tabla-movimiento-valores td:nth-child(10) {
+   width: 18.5mm;
+   font-weight: 300;
+   text-align: center;
+
+}
+
+/* Saldo */
+table.tabla-componente tbody tr.tabla-movimiento-valores td:nth-child(11) {
+   width: 20.5mm;
+   font-weight: 300;
+   text-align: right;
+}
+
+/* Tabla rendimientos*/
+
+table.tabla-componente tbody tr.tabla-rendimientos-titulo td {
+   text-align: end;
+   font-weight: 500;
+}
+
+table.tabla-componente tbody tr.tabla-rendimientos-titulo td:nth-child(1),
+table.tabla-componente tbody tr.tabla-rendimientos-titulo td:nth-child(3) {
+   text-align: start;
+   font-weight: 500;
+}
+
+
+table.tabla-componente tbody tr.tabla-rendimientos-valores td:nth-child(1) {
+   text-align: start;
+}
+
+/* Alinear a la DERECHA (2ª, 4ª, 5ª y 6ª columna) */
+table.tabla-componente tbody tr.tabla-rendimientos-valores td {
+   text-align: end;
+}
+
+table.tabla-componente tbody tr.tabla-comisiones-titulo td:nth-child(2) {
+   text-align: center;
+   width: 5%;
+}
+
+.m-2 {
+   margin: 2mm;
+}
+
+.texto-centrado {
+   text-align: center;
+}
+
+/* Estilos para tabla detalle de posicion de valores */
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(1) { width: 6%; text-align: start; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(2) { width: 5%; text-align: end; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(3) { width: 10%; text-align: end; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(4) { width: 8%; text-align: end; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(5) { width: 8%; text-align: end; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(6) { width: 6%; text-align: end; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(7) { width: 11%; text-align: end; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(8) { width: 12.5%; text-align: end; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(9) { width: 11%; text-align: end; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(10) { width: 4%; text-align: end; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(11) { width: 4%; text-align: end; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(12) { width: 6%; text-align: end; }
+table.tabla-posicion-valores tbody tr:not(:first-child) td:nth-child(13) { width: 4%; text-align: end; }
+
+/* Estilos para tabla valuacion */
+table.tabla-valuacion tbody tr td:nth-child(1) { width: 10%; text-align: start; }
+table.tabla-valuacion tbody tr td:nth-child(2) { width: 9.5%; text-align: start; }
+table.tabla-valuacion tbody tr td:nth-child(3) { width: 9.5%; text-align: start; }
+table.tabla-valuacion tbody tr td:nth-child(4) { width: 9.5%; text-align: start; }
+table.tabla-valuacion tbody tr td:nth-child(5) { width: 12.5%; text-align: start; }
+table.tabla-valuacion tbody tr td:nth-child(6) { width: 16%; text-align: end; }
+table.tabla-valuacion tbody tr td:nth-child(7) { width: 12%; text-align: end; }
+table.tabla-valuacion tbody tr td:nth-child(8) { width: 10%; text-align: end; }
+table.tabla-valuacion tbody tr td:nth-child(9) { width: 11%; text-align: end; }
+
+/* Estilpos para tabla conceptos de CFDI */
+table.tabla-conceptos-cfdi tbody tr td:nth-child(1) { width: 8%; text-align: start; }
+table.tabla-conceptos-cfdi tbody tr td:nth-child(2) { width: 9%; text-align: start; }
+table.tabla-conceptos-cfdi tbody tr td:nth-child(3) { width: 13.5%; text-align: start; }
+table.tabla-conceptos-cfdi tbody tr td:nth-child(4) { width: 33%; text-align: start; }
+table.tabla-conceptos-cfdi tbody tr td:nth-child(5) { width: 14.5%; text-align: end; }
+table.tabla-conceptos-cfdi tbody tr td:nth-child(6) { width: 9%; text-align: end; }
+table.tabla-conceptos-cfdi tbody tr td:nth-child(7) { width: 13%; text-align: end; }

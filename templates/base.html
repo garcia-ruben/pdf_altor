@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8">
+      <title>Estado de cuenta</title>
+      <link rel="stylesheet" href="static/css/base.css">
+   </head>
+   <body>
+      <div class="running-header">
+         <div class="encabezado">
+            <div class="logo-div">
+               <img src="static/images/logo-altor.svg" class="logo" alt="Altor Casa de Bolsa"/>
+            </div>
+            <div class="encabezado-titulo">Estado de Cuenta</div>
+         </div>
+         <div class="encabezado-info">
+            <div class="encabezado-textos">
+               <div>Nombre del Cliente:</div>
+               <div>Núm cliente / contrato:</div>
+               <div>Moneda:</div>
+            </div>
+            <div class="encabezado-valores">
+               <div>{{ nombre_cliente }}</div>
+               <div>{{ num_cliente_contrato }}</div>
+               <div>{{ moneda }}</div>
+            </div>
+         </div>
+      </div>
+
+      <div class="running-footer">
+         <div class="footer">
+            <div class="texto-izquierda">
+               <span> ALTOR CASA DE BOLSA,</span><br>
+               <span>RFC: {{ rfc }}</span><br>
+               <span>{{ regimen_fiscal }}</span>
+            </div>
+            <div class="texto-derecha">
+               Paseo de los Tamarindos 90, Torre 1 Piso 7, Bosques de las Lomas,<br>
+               Cuajimalpa de Morelos, 05120 Ciudad de México, CDMX <br>
+               Teléfono: 55 8659 5300  https://www.altorcb.com/ <br>
+               <span class="paginacion">
+                  Página <span class="numero-pagina"></span> de <span class="total-paginas"></span>
+               </span>
+            </div>
+         </div>
+      </div>
+
+      {% for pagina in paginas %}
+         <div class="contenido">
+            {{ pagina }}
+         </div>
+      {% endfor %}
+   </body>
+</html
