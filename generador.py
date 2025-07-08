@@ -209,18 +209,18 @@ def fn_crear_tabla_resumen():
          },
          {
             "nombre": "Mercado de Capitales",
-            "compras": "0,00",
+            "compras": "0.00",
             "ventas": "0.00"
          }
       ],
       "rendimientos": [
          {
-            "nombre": "Mercado de Dinero en directo",
+            "nombre": "Bruto del mes",
             "cantidad": "10,558.60",
             "porcentaje": "0.79"
          },
          {
-            "nombre": "Mercado de Capitales",
+            "nombre": "Neto del mes",
             "cantidad": "9,973.97",
             "porcentaje": "0.74"
          }
@@ -284,8 +284,8 @@ def fn_crear_tabla_posicion_valores(datos):
             "costo": "0.000000",
             "precio_mercado": "0.0000000",
             "importe_compra": "1,000,000.00",
-            "valor_mercado": "O.OO",
-            "plus_minusvalia": "O.00",
+            "valor_mercado": "0.00",
+            "plus_minusvalia": "0.00",
             "cartera_total": "10.00"
          },
          "mercado_directo_2": {

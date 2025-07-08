@@ -16,10 +16,10 @@
             <td>Serie</td>
             <td>Titulos</td>
             <td>Costo</td>
-            <td>Precio de Mercado ciere anterior</td>
-            <td>Precio de Mercado mes actual</td>
-            <td>Diferencial por valuación</td>
-            <td>% diferencial</td>
+            <td class="texto-derecha">Precio de Mercado ciere anterior</td>
+            <td class="texto-derecha">Precio de Mercado mes actual</td>
+            <td class="texto-derecha">Diferencial por valuación</td>
+            <td class="texto-derecha">% diferencial</td>
          </tr>
 
          <tr class="fw-medium">
@@ -33,11 +33,11 @@
                <td>{{ datos_detalle.emisora }}</td>
                <td>{{ datos_detalle.serie }}</td>
                <td>{{ datos_detalle.titulos }}</td>
-               <td>${{ datos_detalle.costo }}</td>
-               <td>${{ datos_detalle.precio_anterior }}</td>
-               <td>${{ datos_detalle.precio_actual }}</td>
-               <td>${{ datos_detalle.diferencial_valuacion }}</td>
-               <td>{{ datos_detalle.porcentaje }}%</td>
+               <td class="texto-derecha">${{ datos_detalle.costo }}</td>
+               <td class="texto-derecha">${{ datos_detalle.precio_anterior }}</td>
+               <td class="texto-derecha">${{ datos_detalle.precio_actual }}</td>
+               <td class="texto-derecha">${{ datos_detalle.diferencial_valuacion }}</td>
+               <td class="texto-derecha">{{ datos_detalle.porcentaje }}%</td>
             </tr>
          {% endif %}
 

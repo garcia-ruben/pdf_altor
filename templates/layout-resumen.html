@@ -61,11 +61,11 @@
                {% for dato in resumen_cartera_inversion %}
                   <tr>
                      <td>{{ dato.nombre }}</td>
-                     <td>${{ dato.anterior }}</td>
-                     <td>{{ dato.total_anterior }}%</td>
-                     <td>${{ dato.actual }}</td>
-                     <td>{{ dato.total_actual }}%</td>
-                     <td>{{ dato.variacion }}%</td>
+                     <td>{{ dato.anterior }}</td>
+                     <td>{{ dato.total_anterior }}</td>
+                     <td>{{ dato.actual }}</td>
+                     <td>{{ dato.total_actual }}</td>
+                     <td>{{ dato.variacion }}</td>
                   </tr>
                {% endfor %}
             </tbody>
@@ -78,7 +78,7 @@
                   <thead>
                      <tr>
                         <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco fs-12">
-                           Operaciones pendientesde liquidar
+                           Operaciones pendientes de liquidar
                         </th>
                      </tr>
                   </thead>
@@ -91,7 +91,7 @@
                      </tr>
    
                      {% for operacion in operaciones_pendientes %}
-                        <tr>
+                        <tr class="numeros-derecha">
                            <td>{{ operacion.nombre }}</td>
                            <td>${{ operacion.compras }}</td>
                            <td>${{ operacion.ventas }}</td>
@@ -112,7 +112,7 @@
    
                   <tbody>
                      {% for rendimiento in rendimientos %}
-                        <tr>
+                        <tr class="texto-izquierda">
                            <td>{{ rendimiento.nombre }}</td>
                            <td>{{ rendimiento.cantidad }}</td>
                            <td>{{ rendimiento.porcentaje }}%</td>
@@ -123,7 +123,7 @@
             </div>
    
             <!-- TABLA RESUMEN DE MOVIMIENTOS -->
-            <table class="tabla-principal w-mid">
+            <table class="tabla-principal negritas-resumen-movimientos w-mid">
                <thead>
                   <tr>
                      <th class="encabezado-tabla-principal texto-izquierda p-3 texto-blanco fs-12">

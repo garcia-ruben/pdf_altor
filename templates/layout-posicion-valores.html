@@ -17,7 +17,7 @@
                <td>Emisora</td>
                <td>Serie</td>
                <td>Titulos</td>
-               <td>Costo</td>
+               <td class="texto-izquierda">Costo</td>
                <td></td>
                <td>Precio de Mercado</td>
                <td>Importe de compra</td>
@@ -38,7 +38,7 @@
                   <td>${{ datos_detalle.costo }}</td>
                   <td></td>
                   <td>${{ datos_detalle.precio_mercado }}</td>
-                  <td>${{ datos_detalle.importe_compra }}</td>
+                  <td class="texto-derecha">${{ datos_detalle.importe_compra }}</td>
                   <td>${{ datos_detalle.valor_mercado }}</td>
                   <td>${{ datos_detalle.plus_minusvalia }}</td>
                   <td></td>
@@ -72,7 +72,7 @@
 
             <tr class="fw-medium">
                <td>Emisora</td>
-               <td>Serie</td>
+               <td class="texto-izquierda">Serie</td>
                <td>Titulos</td>
                <td>F. Inicio</td>
                <td>F. Venc</td>
@@ -100,7 +100,7 @@
                   <td>${{ datos_detalle.premio_desvengado }}</td>
                   <td>{{ datos_detalle.plazo }}</td>
                   <td>{{ datos_detalle.dias_por_vencer }}</td>
-                  <td>{{ datos_detalle.tasa }}</td>
+                  <td class="texto-izquierda">{{ datos_detalle.tasa }}</td>
                   <td>{{ datos_detalle.cartera_total }}%</td>
                </tr>
             {% endif %}
@@ -149,7 +149,7 @@
                   <td>{{ datos_detalle.emisora }}</td>
                   <td>{{ datos_detalle.serie }}</td>
                   <td>{{ datos_detalle.titulos_mes_actual }}</td>
-                  <td>{{ datos_detalle.costo_promedio }}</td>
+                  <td>${{ datos_detalle.costo_promedio }}</td>
                   <td></td>
                   <td>${{ datos_detalle.precio_mercado }}</td>
                   <td>${{ datos_detalle.importe_compra }}</td>

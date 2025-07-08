@@ -19,7 +19,7 @@
          <tr class="fw-medium">
             <td>Tipo posicion</td>
             <td>Emisora</td>
-            <td>Serie</td>
+            <td class="texto-izquierda">Serie</td>
             <td>Titulos</td>
             <td>Costo</td>
             <td></td>
@@ -38,9 +38,9 @@
             <tr>
                <td>{{ datos_detalle.tipo_posicion }}</td>
                <td>{{ datos_detalle.emisora }}</td>
-               <td>{{ datos_detalle.serie }}</td>
-               <td>{{ datos_detalle.titulos }}</td>
-               <td>${{ datos_detalle.costo }}</td>
+               <td class="texto-izquierda">{{ datos_detalle.serie }}</td>
+               <td class="texto-derecha">{{ datos_detalle.titulos }}</td>
+               <td class="texto-derecha">${{ datos_detalle.costo }}</td>
                <td></td>
                <td>${{ datos_detalle.precio_venta }}</td>
                <td>${{ datos_detalle.diferencial_valuacion }}</td>
