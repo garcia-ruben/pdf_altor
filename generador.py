@@ -20,7 +20,7 @@ def fn_generar_graficas_svg(datos):
    ]
    colores = [
       "#0291A4",
-      "#005A7A",
+      "#165B79",
       "#C2C2C2",
       "#D7E2E4"
    ]
@@ -1194,7 +1194,7 @@ def fn_crear_diferencial_2(datos):
    return html
 
 def fn_crear_tabla_rendimiento_cartera_inversion(datos):
-   datos = [
+   datos_cartera_inversion = [
       {
          "Mes": "ENE",
          "valor_cartera": "$1,231,238.97",
@@ -1292,13 +1292,24 @@ def fn_crear_tabla_rendimiento_cartera_inversion(datos):
          "porcentaje_neto": "0.74%"
       }
    ]
+   datos_desglose = [
+      {
+         "comision": "0.00",
+         "porcentaje": "0.00",
+      },
+      {
+         "comision": "1.00",
+         "porcentaje": "1.00",
+      },
+   ]
    mes_rendimiento = "enero"
    anio_rendimiento = "2025"
 
    env = Environment(loader = FileSystemLoader("templates"))
    plantilla = env.get_template("layout-rendimiento-desglose.html")
    html = plantilla.render({
-      "datos": datos,
+      "datos_cartera_inversion": datos_cartera_inversion,
+      "datos_desglose": None,
       "mes_rendimiento": mes_rendimiento,
       "anio_rendimiento": anio_rendimiento
    })

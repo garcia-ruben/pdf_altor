@@ -10,10 +10,10 @@
          <tbody>
             <!-- Mercado de Dinero en directo -->
             <tr class="fw-medium">
-               <td colspan="9" class="pt-2">Mercado de Dinero en directo</td>
+               <td colspan="9" class="pt-2 fs-9">Mercado de Dinero en directo</td>
             </tr>
 
-            <tr class="fw-medium">
+            <tr class="fw-medium fs-9">
                <td>Emisora</td>
                <td>Serie</td>
                <td>Titulos</td>
@@ -35,7 +35,7 @@
                   <td>{{ datos_detalle.emisora }}</td>
                   <td>{{ datos_detalle.serie }}</td>
                   <td>{{ datos_detalle.titulos }}</td>
-                  <td>${{ datos_detalle.costo }}</td>
+                  <td class="texto-izquierda">${{ datos_detalle.costo }}</td>
                   <td></td>
                   <td>${{ datos_detalle.precio_mercado }}</td>
                   <td>${{ datos_detalle.importe_compra }}</td>
@@ -52,25 +52,25 @@
             <tr>
                <td></td>
                <td></td>
-               <td class="borde-arriba borde-abajo">{{ datos_detalle.titulos }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">{{ datos_detalle.titulos }}</td>
                <td></td>
                <td></td>
                <td></td>
-               <td class="borde-arriba borde-abajo">${{ datos_detalle.importe_compra }}</td>
-               <td class="borde-arriba borde-abajo">${{ datos_detalle.valor_mercado }}</td>
-               <td class="borde-arriba borde-abajo">${{ datos_detalle.plus_minusvalia }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ datos_detalle.importe_compra }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ datos_detalle.valor_mercado }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ datos_detalle.plus_minusvalia }}</td>
                <td></td>
                <td></td>
                <td></td>
-               <td class="borde-arriba borde-abajo">{{ datos_detalle.cartera_total }}%</td>
+               <td class="borde-arriba borde-abajo fw-medium">{{ datos_detalle.cartera_total }}%</td>
             </tr>
 
             <!-- Mercado de dinero en reporto -->
             <tr class="fw-medium">
-               <td colspan="9" class="pt-2 pb-2">Mercado de dinero en reporto</td>
+               <td colspan="9" class="pt-2 pb-2 fs-9">Mercado de dinero en reporto</td>
             </tr>
 
-            <tr class="fw-medium">
+            <tr class="fw-medium fs-9">
                <td>Emisora</td>
                <td>Serie</td>
                <td>Titulos</td>
@@ -109,25 +109,25 @@
             <tr>
                <td></td>
                <td></td>
-               <td class="borde-arriba borde-abajo">{{ datos_detalle.titulos }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">{{ datos_detalle.titulos }}</td>
                <td></td>
                <td></td>
                <td></td>
-               <td class="borde-arriba borde-abajo">${{ datos_detalle.importe_operacion }}</td>
-               <td class="borde-arriba borde-abajo">${{ datos_detalle.valor_cierre }}</td>
-               <td class="borde-arriba borde-abajo">${{ datos_detalle.premio_desvengado }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ datos_detalle.importe_operacion }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ datos_detalle.valor_cierre }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ datos_detalle.premio_desvengado }}</td>
                <td></td>
                <td></td>
                <td></td>
-               <td class="borde-arriba borde-abajo">{{ datos_detalle.cartera_total }}%</td>
+               <td class="borde-arriba borde-abajo fw-medium">{{ datos_detalle.cartera_total }}%</td>
             </tr>
 
             <!-- Mercado de capitales -->
             <tr class="fw-medium">
-               <td colspan="9" class="pt-2 pb-2">Mercado de capitales</td>
+               <td colspan="9" class="pt-2 pb-2 fs-9">Mercado de capitales</td>
             </tr>
 
-            <tr class="fw-medium">
+            <tr class="fw-medium fs-9">
                <td>Emisora</td>
                <td>Serie</td>
                <td>Titulos Mes Actual</td>
@@ -166,25 +166,25 @@
             <tr>
                <td></td>
                <td></td>
-               <td class="borde-arriba borde-abajo">{{ datos_detalle.titulos_mes_actual }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">{{ datos_detalle.titulos_mes_actual }}</td>
                <td></td>
                <td></td>
                <td></td>
-               <td class="borde-arriba borde-abajo">${{ datos_detalle.importe_compra }}</td>
-               <td class="borde-arriba borde-abajo">${{ datos_detalle.valor_mercado }}</td>
-               <td class="borde-arriba borde-abajo">${{ datos_detalle.plus_minusvalia }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ datos_detalle.importe_compra }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ datos_detalle.valor_mercado }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ datos_detalle.plus_minusvalia }}</td>
                <td></td>
                <td></td>
                <td></td>
-               <td class="borde-arriba borde-abajo">{{ datos_detalle.cartera_total }}%</td>
+               <td class="borde-arriba borde-abajo fw-medium">{{ datos_detalle.cartera_total }}%</td>
             </tr>
 
             <!-- Saldo en Efectivo -->
             <tr class="fw-medium">
-               <td colspan="9" class="pt-2 pb-2">Saldo en Efectivo</td>
+               <td colspan="9" class="pt-2 pb-2 fs-9">Saldo en Efectivo</td>
             </tr>
 
-            <tr class="fw-medium">
+            <tr class="fw-medium fs-9">
                <td></td>
                <td></td>
                <td></td>
@@ -192,7 +192,7 @@
                <td></td>
                <td></td>
                <td></td>
-               <td>Valor de Cierre</td>
+               <td >Valor de Cierre</td>
                <td></td>
                <td></td>
                <td></td>
@@ -224,13 +224,13 @@
                <td></td>
                <td></td>
                <td></td>
+               <td class="borde-arriba borde-abajo"></td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ datos_detalle.valor_cierre }}</td>
+               <td class="borde-arriba borde-abajo"></td>
                <td></td>
-               <td class="borde-arriba borde-abajo">${{ datos_detalle.valor_cierre }}</td>
                <td></td>
                <td></td>
-               <td></td>
-               <td></td>
-               <td class="borde-arriba borde-abajo">{{ datos_detalle.cartera_total }}%</td>
+               <td class="borde-arriba borde-abajo fw-medium">{{ datos_detalle.cartera_total }}%</td>
             </tr>
 
             <!-- Total -->
@@ -244,14 +244,13 @@
                <td></td>
                <td></td>
                <td class="texto-izquierda">Total</td>
-               <td class="borde-arriba borde-abajo">${{ detalle.total }}</td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ detalle.total }}</td>
                <td></td>
                <td></td>
                <td></td>
                <td></td>
-               <td></td>
+               <td class="borde-arriba borde-abajo fw-medium">${{ detalle.cartera_total }}</td>
             </tr>
-            <tr><td class="pt-2 pb-2"></td></tr>
             <tr><td class="pt-2 pb-2"></td></tr>
          </tbody>
       </table>

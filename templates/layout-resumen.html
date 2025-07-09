@@ -118,6 +118,8 @@
                            <td>{{ rendimiento.porcentaje }}%</td>
                         </tr>
                      {% endfor %}
+                     <tr><td class="pb-2"></td></tr>
+                     <tr><td class="pb-2"></td></tr>
                   </tbody>
                </table>
             </div>
@@ -138,6 +140,9 @@
                         <td>{{ movimiento.nombre }}</td>
                         <td class="texto-derecha">${{ movimiento.cantidad }}</td>
                      </tr>
+                     {% if "Valor de la cartera al corte" in movimiento.nombre %}
+                        <tr><td class="pt-2 pb-2"></td></tr>
+                     {% endif %}
                   {% endfor %}
                </tbody>
             </table>

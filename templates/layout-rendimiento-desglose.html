@@ -17,7 +17,7 @@
             <td>%</td>
             <td></td>
          </tr>
-         {% for dato in datos %}
+         {% for dato in datos_cartera_inversion %}
             <tr class="w-full tabla-rendimientos-valores">
                <td>{{ dato.Mes }}</td>
                <td>{{ dato.valor_cartera }}</td>
@@ -48,21 +48,19 @@
             </tr>
          </thead>
          <tbody>
-            <tr class="fs-9 tabla-comisiones-titulo">
-               <td>Comisiones con IVA</td>
-               <td>% sobre cartera</td>
-            </tr>
-            {% for dato in datos %}
-               <tr class="w-full tabla-rendimientos-valores">
-                  <td>{{ dato.comisiones }}</td>
-                  <td>{{ dato.porcentaje }}</td>
-               </tr>
+            {% if datos_desglose %}
+               {% for dato in datos_desglose %}
+                  <tr class="w-full tabla-rendimientos-valores">
+                     <td>{{ dato.comision }}</td>
+                     <td>{{ dato.porcentaje }}</td>
+                  </tr>
+               {% endfor %}
             {% else %}
-               <tr class="fs-9 tabla-rendimientos-titulo">
+               <tr class="fs-9 tabla-comisiones-titulo">
                   <td>Comisiones con IVA</td>
                   <td>% sobre cartera</td>
                </tr>
-            {% endfor %}
+            {% endif %}
          </tbody>
       </table>
       <p class="m-2 texto-justificado">

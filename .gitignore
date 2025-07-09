@@ -16,3 +16,4 @@ ENV/
 # Archivos de bases de datos temporales o sqlite
 *.db
 *.sqlite3
+pdf/
