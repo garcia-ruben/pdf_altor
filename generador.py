@@ -1449,6 +1449,6 @@ def main(indice):
 
 
 if __name__ == "__main__":
-   for i in range(1):
+   for i in range(10):
       main(i)
       print(f"Ciclo número {i}")
